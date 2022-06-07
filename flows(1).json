@@ -19,6 +19,11 @@
             {
                 "p": "topic",
                 "vt": "str"
+            },
+            {
+                "p": "g7",
+                "v": "hola G7",
+                "vt": "str"
             }
         ],
         "repeat": "",
@@ -32,7 +37,8 @@
         "y": 220,
         "wires": [
             [
-                "df9251027a8e7891"
+                "df9251027a8e7891",
+                "3c4d12b71e84403a"
             ]
         ]
     },
@@ -45,10 +51,11 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 790,
+        "x": 770,
         "y": 220,
         "wires": []
     },
@@ -83,10 +90,27 @@
         "name": "",
         "label": "La hora es:",
         "format": "{{msg.payload}}",
-        "layout": "row-spread",
+        "layout": "col-center",
         "className": "",
         "x": 790,
         "y": 280,
+        "wires": []
+    },
+    {
+        "id": "3c4d12b71e84403a",
+        "type": "debug",
+        "z": "bb1bbbe8d849cb79",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 340,
         "wires": []
     },
     {
