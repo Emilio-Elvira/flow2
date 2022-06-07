@@ -1,0 +1,112 @@
+[
+    {
+        "id": "bb1bbbe8d849cb79",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6f1146e2156ad46f",
+        "type": "inject",
+        "z": "bb1bbbe8d849cb79",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 420,
+        "y": 220,
+        "wires": [
+            [
+                "df9251027a8e7891"
+            ]
+        ]
+    },
+    {
+        "id": "6a8b10db81375e59",
+        "type": "debug",
+        "z": "bb1bbbe8d849cb79",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "df9251027a8e7891",
+        "type": "function",
+        "z": "bb1bbbe8d849cb79",
+        "name": "",
+        "func": "// Lo que está después de “//” son comentarios\n// Crea un objeto Date a partir del payload enviado por timestamp\nvar date = new Date(msg.payload);\n// Cambia el payload para que sea una fecha con formato\nmsg.payload = date.toString();\n// Regresa el mensaje para que se envíe al sigueinte nodo\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 220,
+        "wires": [
+            [
+                "6a8b10db81375e59",
+                "061d8bdbab6bd702"
+            ]
+        ]
+    },
+    {
+        "id": "061d8bdbab6bd702",
+        "type": "ui_text",
+        "z": "bb1bbbe8d849cb79",
+        "group": "752b5fc27d4ac0df",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "La hora es:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 790,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "752b5fc27d4ac0df",
+        "type": "ui_group",
+        "name": "Hora",
+        "tab": "6cb2800a76d8df5b",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6cb2800a76d8df5b",
+        "type": "ui_tab",
+        "name": "Hora",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
